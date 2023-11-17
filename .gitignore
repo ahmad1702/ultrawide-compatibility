@@ -1,0 +1,8 @@
+.env
+.air.toml
+tmp
+app
+jim.json
+public/output.*
+.DS_Store
+data/data.xlsx
