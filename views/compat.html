@@ -1,0 +1,51 @@
+<main class="h-screen">
+  {{template "partials/header" .}}
+
+  <div class="container mx-auto py-4">
+    <h1 class="text-5xl">Compatibility List</h1>
+
+    <section class="pt-10">
+      <div>
+        <h3 class="mb-2 flex items-center gap-2 htmx-searching [&.htmx-request]:content-['jimmy']">
+          Search<span
+            class="htmx-searching [&.htmx-request]:animate-out block animate-in fade-in fade-out float-left">ing</span>
+          Games
+          <!-- <span class="htmx-searching [&.htmx-request]:block hidden">Searching Games</span> -->
+          <span class="htmx-searching loading loading-dots loading-md [&.htmx-request]:block hidden"></span>
+        </h3>
+        <input class="input input-bordered min-w-[22rem]" type="search" name="search"
+          placeholder="Begin Typing To Search Games..." hx-post="/api/compat/search"
+          hx-trigger="input changed delay:500ms, search" hx-target="#game-statuses" hx-indicator=".htmx-searching">
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Title</th>
+              <th>Year</th>
+              <th>Category</th>
+              <th>Native Status</th>
+              <th>HorScal</th>
+              <th>VertScal</th>
+              <th>FovCorrect</th>
+              <th>Solution</th>
+              <th>Sol. Link</th>
+              <th>Preview Link</th>
+            </tr>
+          </thead>
+          <tbody id="game-statuses" hx-get="/api/compat?template=true" hx-trigger="load" hx-indicator="#table-spinner"
+            hx-swap="innerHTML"></tbody>
+
+        </table>
+        <span id="table-spinner" class="[&.htmx-request]:flex hidden items-center justify-center gap-2 my-4">
+          <span>Fetching yo list...</span>
+          <span class="loading loading-spinner loading-lg">
+          </span>
+          <!-- <progress id="table-spinner" class="progress w-full hidden block"></progress> -->
+        </span>
+      </div>
+    </section>
+  </div>
+</main>

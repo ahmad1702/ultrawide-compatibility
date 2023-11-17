@@ -1,12 +1,25 @@
-<header class="bg-blue-500">
-  <nav class="flex w-full max-w-5xl p-6 mx-auto">
-    <ul class="flex gap-6 text-white">
-      <li class="underline">
-        <a href="/" hx-boost="true">Home</a>
-      </li>
-      <li class="underline">
-        <a href="/boost" hx-boost="true">Boost</a>
-      </li>
-    </ul>
-  </nav>
-</header>
+<nav class="p-4">
+  <div class="navbar shadow-xl rounded-box">
+    <div class="flex-1">
+      <a href="/" class="btn btn-ghost text-xl">UltraWHY</a>
+    </div>
+    <div class="flex-none">
+      <ul class="menu menu-horizontal px-1">
+        <li><a href="/">Home</a></li>
+        <li><a href="/boost">Boost</a></li>
+        <li><a href="/compat">Compat</a></li>
+        <li>
+          <details>
+            <summary>
+              Mode
+            </summary>
+            <ul class="p-2 bg-base-100">
+              <li><a>21:9</a></li>
+              <li><a>32:9</a></li>
+            </ul>
+          </details>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

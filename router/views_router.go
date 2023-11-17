@@ -16,4 +16,10 @@ func ViewsRouter(r fiber.Router) {
 		}, "layouts/root")
 	})
 
+	r.Get("/compat", func(c *fiber.Ctx) error {
+		return c.Render("compat", fiber.Map{
+			"Title": "Compatibility List",
+		}, "layouts/root")
+	})
+
 }

@@ -4,5 +4,13 @@ module.exports = {
   theme: {
     extend: {}
   },
-  plugins: []
+  plugins: [
+    require('daisyui'),
+    require("tailwindcss-animate")
+  ],
+  safelist: [
+    'table'
+  ],
+  daisyui: {
+  }
 }

@@ -1,0 +1,17 @@
+{{ range .GameStatuses }}
+<tr id="game-status-{{ .Id }}" class="hover">
+  <th>{{ .Id }}</th>
+  <td>{{ .PageInfo.newPage}}</td>
+  <td>{{ .Year }}</td>
+  <td>{{ .Category }}</td>
+  <td>{{ .NativeStatus }}</td>
+  <td>{{ .HorScal }}</td>
+  <td>{{ .VertScal }}</td>
+  <td>{{ .FovCorrect }}</td>
+  <td>{{ .Solution }}</td>
+  <td>{{ .SolutionLink }}</td>
+  <td>{{ .PreviewLink }}</td>
+</tr>
+{{ end }}
+<tr hx-get="/api/compat/?template=true&page=2" hx-trigger="revealed" hx-swap="afterend" class="h-0 w-full opacity-0">
+</tr>
